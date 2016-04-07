@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#hide").click(function() {
+            $("p").hide();
+        });
+        $("#show").click(function() {
+            $("p").show();
+        });
+        $("#table_hide").click(function() {
+            $("table").hide();
+        });
+        $("#table_show").click(function() {
+            $("table").show();
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <p id="p1">如果点击“隐藏”按钮，我就会消失。</p>
+    <button id="hide" type="button">隐藏</button>
+    <button id="show" type="button">显示</button>
+    <button id="table_hide" type="button">table隐藏</button>
+    <button id="table_show" type="button">table显示</button>
+    <div>
+    	<table>
+    		<tr>
+    			<td>
+    				<a href="http://www.w3school.com.cn/jquery/jquery_install.asp">lalala</a>
+    			</td>
+    			<td>
+    				<a href="http://www.w3school.com.cn/js/js_whereto.asp">lalala</a>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				<a href="http://www.w3school.com.cn/jquery/jquery_install.asp">lalala</a>
+    			</td>
+    			<td>
+    				<a href="http://www.w3school.com.cn/js/js_whereto.asp">lalala</a>
+    			</td>
+    		</tr>
+    	</table>
+    </div>
+</body>
+
+</html>
