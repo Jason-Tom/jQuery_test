@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <title>lalala</title>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // jQuery用$代替
+        $("button").click(function(event) {
+            $(this).hide();
+        });
+        $("div").click(function(event) {
+            $("div").hide();
+        });
+        $(".p").click(function(event) {
+            $(".p").hide();
+        });
+        $("#table").click(function(event) {
+            $("#table").hide();
+        });
+        $("span.la").click(function(event) {
+          $("span.la").hide();
+        });
+        $("span#ga").click(function(event) {
+          $("span#ga").hide();
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <button type="button" class="btn btn-primary">hide() 隐藏当前标签</button>
+    <div>隐藏标签名为div的标签</div>
+    <p class="p">隐藏样式类名为p的标签</p>
+    <table class="table" id="table">
+        <thead>
+            <tr>
+                <th>隐藏id名为table的标签</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>asdf</td>
+            </tr>
+        </tbody>
+    </table>
+    <span class="la">span 属性la</span>
+    <span id="ga">span 属性ga</span>
+</body>
+
+</html>

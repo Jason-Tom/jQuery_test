@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <title>lalala</title>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("div").click(function(event) {
+            var lalala = $('button');
+            lalala.animate({
+                left: '500px',
+                top: "500px",
+                width: "+=50px",
+                height: '-=10px',
+                // height: 'toggle',
+                opacity: "0.7",
+                // 可以用 animate() 方法来操作几乎所有 CSS 属性,颜色无法改变
+            }, 1000);
+             lalala.animate({
+                left: '+=50px',
+                top: "+=50px",
+                width: "+=90px",
+                height: '+=80px',
+                // height: 'toggle',
+                opacity: "1",
+                fontSize:"80px"
+                // 可以用 animate() 方法来操作几乎所有 CSS 属性,颜色无法改变
+            }, 1000);
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div>
+        <button type="button" style="width: 50px;height: 50px;position: absolute">asdf</button>
+        <!-- CSS position 属性设置为 relative、fixed 或 absolute。 -->
+</body>
+
+</html>

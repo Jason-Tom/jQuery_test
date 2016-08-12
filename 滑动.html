@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <title>lalala</title>
+    <style type="text/css" media="screen">
+    ul {
+        display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".la").click(function() {
+            $(".la1").slideDown("slow");
+        });
+        $(".ga").click(function(){
+          $(".ga1").slideUp("slow");
+        })
+        $(".ha").click(function(){
+          $(".ha1").slideToggle("slow");
+        })
+    });
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1 class="la">啦啦啦</h1>
+        <ul class="la1">
+            <li>啦啦啦啦啦啦啦啦啦</li>
+            <li>啦啦啦啦啦啦啦啦啦</li>
+            <li>啦啦啦啦啦啦啦啦啦</li>
+            <li>啦啦啦啦啦啦啦啦啦</li>
+        </ul>
+    </div>
+    <div>
+      <h1 class="ga">gagaga</h1>
+      <h2 class="ga1">gagaga1</h2>
+      <h2 class="ga1">gagaga1</h2>
+      <h2 class="ga1">gagaga1</h2>
+      <h2 class="ga1">gagaga1</h2>
+      <h2 class="ga1">gagaga1</h2>
+    </div>
+    <div>
+      <span class="ha"><strong>hahahahahahahaha</strong></span>
+      <p class="ha1">ha1ha1ha1ha1ha1ha1ha1ha1ha1ha1</p>
+      <p class="ha1">ha1ha1ha1ha1ha1ha1ha1ha1ha1ha1</p>
+      <p class="ha1">ha1ha1ha1ha1ha1ha1ha1ha1ha1ha1</p>
+      <p class="ha1">ha1ha1ha1ha1ha1ha1ha1ha1ha1ha1</p>
+    </div>
+</body>
+
+</html>

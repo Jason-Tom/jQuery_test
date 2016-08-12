@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <title>lalala</title>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("button.la").click(function() {
+            $("#div1").fadeIn();
+            $("#div2").fadeIn("slow");
+            $("#div3").fadeIn(3000);
+            $("#div4").fadeIn('fast');
+        });
+        $("button.ga").click(function() {
+            $("#div1").fadeOut();
+            $("#div2").fadeOut("slow");
+            $("#div3").fadeOut(3000);
+            $("#div4").fadeOut('fast');
+        });
+        $("button.ha").click(function() {
+            $("#div1").fadeToggle();
+            $("#div2").fadeToggle("slow");
+            $("#div3").fadeToggle(3000);
+            $("#div4").fadeToggle('fast');
+        });
+        $("button.xi").click(function() {
+            $("#div1").fadeTo(0, 0.5);
+            $("#div2").fadeTo("slow", 0.5);
+            $("#div3").fadeTo(3000, 0.5);
+            $("#div4").fadeTo('fast', 0.5);
+            // 直接改变透明度，后面的淡入淡出透明度也就是那个透明度了
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <p>演示带有不同参数的 fadeIn() 方法。</p>
+    <button class="la">点击这里，使四个矩形淡入</button>
+    <button class="ga">点击这里，使四个矩形淡出</button>
+    <button class="ha">点击这里，使四个矩形切换</button>
+    <button class="xi">点击这里，使四个矩形渐变到设定透明度</button>
+    <br>
+    <br>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+    <br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+    <br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+    <br>
+    <div id="div4" style="width:80px;height:80px;display:none;background-color:black;"></div>
+</body>
+
+</html>
