@@ -5,13 +5,18 @@
     <script src="jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function($) {
-
+        $("h1").click(function() {
+            $("h1").hide(1000).show(1000).css('color', 'blue');
+            // 执行顺序也是异步的
+        });
     });
     </script>
 </head>
 
 <body>
-  
+    <div>
+        <h1>lalala</h1>
+    </div>
 </body>
 
 </html>

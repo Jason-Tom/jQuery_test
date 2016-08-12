@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("button").click(function(event) {
+            $("p").hide(500, function() {
+                alert("隐藏");
+            });
+            // alert("没隐藏");
+            // 几乎同时执行
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <button type="button">Hide</button>
+    <p>This is a paragraph with little content.</p>
+</body>
+
+</html>
