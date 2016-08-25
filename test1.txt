@@ -1,0 +1,2 @@
+pAJAX is not a programming language.p
+pIt is just a technique for creating better and more interactive web applications.p

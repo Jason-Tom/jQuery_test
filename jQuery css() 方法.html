@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("button#one").click(function(event) {
+            alert($("div#one1").css('color'));
+            // alert($("div#one1").css('backgroundColor'));
+            // 获取不存在的属性，他会返回默认值
+            // alert($("div#one1").css('backgroundColor','color'));
+            // 不支持一次性返回多个值
+            // alert($("div#one1,div#one2").css('Color'));
+            // 多个标签获取值，只会获取第一个
+        });
+        $("button#five").click(function(event) {
+            $("div#three").css("backgroundColor", "yellow");
+        });
+        $("button#six").click(function(event) {
+            $("div#four").css({
+                "backgroundColor": "green",
+                "font-size": "40px"
+            });
+            // $("div#four,div#three").css({"backgroundColor":"green","font-size":"40px"});
+            // 支持多个标签同时改样式
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="one1" style="color: red">
+        一个标签获取一个css样式的值
+    </div>
+    <div id="one2" style="color: yellow">
+        一个标签获取一个css样式的值2
+    </div>
+    <button id="one">一个标签获取一个css样式的值</button>
+    <div id="three" class="three">
+        更改标签指定属性值，一次改一个
+    </div>
+    <button id="five" class="five">更改标签指定属性值，一次改一个</button>
+    <div id="four" class="four">
+        更改标签指定属性值，一次改一个
+    </div>
+    <button id="six" type="button" class="">更改标签指定属性值，一次改多个</button>
+</body>
+
+</html>

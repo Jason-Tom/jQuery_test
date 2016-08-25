@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("div").first().css("backgroundColor", "yellow");
+        $("div").last().css("backgroundColor", "green");
+        $("p").eq(4).css("backgroundColor", "blue");
+        $("p").filter(".t").css("color", "red");
+        $("p").not(".t").css("color", "lightgreen");
+        // 选择其没有选择默认为空,注意大小写
+        $("div p").last().css("background-color", "purple");
+        // 标签之间空格表示某标签下的全部指定子元素
+        $("div ul li").last().css("background-color", "purple");
+        // 可以多重嵌套使用
+        $("p").filter(".t").first().css("color", "lightblue");
+        // 过滤器混合使用
+    });
+    </script>
+</head>
+
+<body>
+    <h1>欢迎来到我的主页</h1>
+    <div>
+        <ul>
+            <li>asdf</li>
+        </ul>
+        <p class="t">这是 div 中的一个段落。</p>
+        <p class="t">这是 div 中的一个段落。</p>
+    </div>
+    <div>
+        <p>这是 div 中的另一个段落。</p>
+    </div>
+    <p>这也是段落。</p>
+    <p class="t">这也是段落。</p>
+    <p>这也是段落。</p>
+</body>
+
+</html>

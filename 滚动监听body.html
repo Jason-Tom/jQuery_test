@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".btn1").click(function() {
+            $("div").scrollTop(0);
+            // 设定标签(一般是body)上下位置
+        });
+        $(".btn2").click(function() {
+            alert($("div").scrollTop() + " px");
+            // 获取标签上下位置,不包括单位
+        });
+        $("_div").scroll(function() {
+            alert($("div").scrollTop() + " px");
+        });
+        $("div").scroll(function() {
+            if ($("div").scrollTop() > 300) {
+                $(".btn2").css("display", "none");
+            } else {
+                $(".btn2").css("display", "block");
+            }
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="_div" style="border:1px solid black;width:200px;height:200px;overflow:auto">
+        <div style="width:100px;height:800px;background-color: blue">
+        </div>
+    </div>
+    <button class="btn1">把 scroll top offset 设置为 100px</button>
+    <br />
+    <button class="btn2">获得 scroll top offset</button>
+</body>
+
+</html>

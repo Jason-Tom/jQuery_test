@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".btn1").click(function() {
+            $("div").scrollTop(0);
+            // 设定标签(一般是body)上下位置
+        });
+        $(".btn2").click(function() {
+            alert($("div").scrollTop() + " px");
+            // 获取标签上下位置,不包括单位
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div style="border:1px solid black;width:200px;height:200px;overflow:auto">
+        This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+    </div>
+    <button class="btn1">把 scroll top offset 设置为 100px</button>
+    <br />
+    <button class="btn2">获得 scroll top offset</button>
+</body>
+
+</html>

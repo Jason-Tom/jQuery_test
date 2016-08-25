@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        // $("h2").siblings().css("border", "2px solid red");
+        // $("h2").siblings(".la").css("border", "2px solid red");
+        // $("h2").next().css("border", "2px solid red");
+        // $("h2").next("ga").css("border", "2px solid red");
+        // 只能指定下直接一个元素
+        // $("h2").nextAll().css("border", "2px solid red");
+        // $("h2").nextUntil().css("border", "2px solid red");
+        // 不填默认到结尾
+        $("h2").nextUntil("p").css("border", "2px solid red");
+        // 不包括指定的那个
+    });
+    </script>
+    <style>
+    .siblings * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+    </style>
+</head>
+
+<body class="siblings">
+    <p class="la">p</p>
+    <p class="la">p11</p>
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <p class="ga">p</p>
+    <p class="ga1">p1</p>
+</body>
+
+</html>

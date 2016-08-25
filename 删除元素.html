@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            // $("#div1").remove();
+            // $("#div1").empty();
+            $("p").remove("#ga");
+            // 配合选择器进行删除
+            // $("p").empty("#ga");
+            // 不支持选择器配合选择清空
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+        This is some text in the div.
+        <p>This is a paragraph in the div.</p>
+        <p>This is another paragraph in the div.</p>
+        <p id="ga">This is another paragraph in the div.</p>
+        <p class="lala">This啦啦啦啦in the div.</p>
+    </div>
+    <br>
+    <button>删除 div 元素</button>
+</body>
+
+</html>

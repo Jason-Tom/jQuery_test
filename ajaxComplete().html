@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#txt").ajaxStart(function() {
+            $("#wait").css("display", "block");
+        });
+        // 加载完成之前执行ajaxStart方法
+        $("#txt").ajaxComplete(function() {
+            $("#wait").css("display", "none");
+        });
+        // 加载完成之后执行ajaxComplete方法，不管是成功还是失败
+        // ajax执行方法的顺序自己内定好了，无需考虑放置顺序
+        $("button").click(function() {
+            $("#txt").load("demo_ajax_load.asp");
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="txt">
+        <h2>通过 AJAX 改变文本</h2></div>
+    <button>改变内容</button>
+    <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;">
+        <img src='demo_wait.gif' width="64" height="64" />
+        <br />加载中 ...
+    </div>
+</body>
+
+</html>

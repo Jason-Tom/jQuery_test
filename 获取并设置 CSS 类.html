@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button#lalala").click(function() {
+            $("h1").addClass("one");
+            // 添加文件中已经设定好样式，已经有的样式不会被覆盖，优先级最低
+            $("h2").addClass("two three");
+            $("h3,h4").addClass("four");
+        });
+        $("button#five").click(function() {
+            // 选择标签使用选择器选择标签通用规则
+            $("div#five").removeClass('five')
+        });
+        $("button#six").click(function() {
+            $("div#six").removeClass('six')
+        });
+        $("button#eight").click(function() {
+            $("div.eight").removeClass('eight nine')
+        });
+        $("button#ten").click(function() {
+            $("div.ten").removeClass('ten eleven')
+        });
+        $("button#twelve1").click(function() {
+            $("div.twelve1").removeClass('twelve1')
+        });
+        $("button#thirteen").click(function() {
+            $("div#thirteen1,div#thirteen2").removeClass('thirteen1 thirteen2')
+        });
+    });
+    </script>
+    <style type="text/css" media="screen">
+    .six {
+        color: yellow;
+    }
+    
+    .ten {
+        font-size: 30px;
+    }
+    
+    .eleven {
+        color: grey;
+    }
+    
+    .twelve1 {
+        color: yellow;
+    }
+    
+    .thirteen1 {
+        color: green;
+    }
+    
+    .thirteen2 {
+        color: red;
+    }
+    
+    button {
+        display: block;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+
+<body>
+    <h1>一个标签添加一个类</h1>
+    <!-- <h1 style="color: blue">一个标签添加一个类</h1> -->
+    <h2>一个标签添加多个类</h2>
+    <h3>多个标签添加多个类1</h3>
+    <h4>多个标签添加多个类2</h4>
+    <h4 style="color: blue">不能改变已有的样式</h4>
+    <button id="lalala">点击按钮添加相应类</button>
+    <div id="five" class="five">
+        一个标签移除一个样式（外部的）
+    </div>
+    <div id="six" class="six">
+        一个标签移除一个样式（内部的）
+    </div>
+    <div style="color: green">
+        一个标签移除一个样式（内联的）
+    </div>
+    <div class="eight">
+        一个标签删除本来没有的样式
+    </div>
+    <div class="ten eleven">
+        一个标签删除多个样式
+    </div>
+    <div id="twelve1" class="twelve1">
+        多个标签删除一个样式1
+    </div>
+    <div id="twelve1" class="twelve1">
+        多个标签删除一个样式2
+    </div>
+    <div id="thirteen1" class="thirteen1">
+        多个标签删除多个样式1
+    </div>
+    <div id="thirteen2" class="thirteen2">
+        多个标签删除多个样式2
+    </div>
+    <button id="five">一个标签移除一个样式（外部的）</button>
+    <button id="six">一个标签移除一个样式（内部的）</button>
+    <button id="seven">一个标签移除一个样式（内联的）</button>
+    <!-- 不知道如何删除，以后记得样式尽量写在.css文件里面 -->
+    <button id="eight">一个标签删除本来没有的样式</button>
+    <!-- 没报错，但是本来没有的不起作用 -->
+    <button id="ten">一个标签删除多个样式</button>
+    <button id="twelve1">多个标签删除一个样式</button>
+    <button id="thirteen">多个标签删除多个样式</button>
+    <!-- 两个标签都分别组合删除样式集合 -->
+</body>
+
+</html>

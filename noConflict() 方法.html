@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script>
+    $.noConflict();
+    // 取消$代替jQuery，不用担心该语句放置顺序
+    jQuery(document).ready(function() {
+        jQuery("button").click(function() {
+            jQuery("p").text("jQuery 仍在运行！");
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <p>这是一个段落。</p>
+    <button>测试 jQuery</button>
+</body>
+
+</html>

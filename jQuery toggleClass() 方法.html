@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button#five").click(function() {
+            // 选择标签使用选择器选择标签通用规则
+            $("div#five").toggleClass('five')
+        });
+        $("button#six").click(function() {
+            $("div#six").toggleClass('six')
+        });
+        $("button#eight").click(function() {
+            $("div.eight").toggleClass('eight nine')
+        });
+        $("button#ten").click(function() {
+            $("div#ten").toggleClass('ten eleven')
+        });
+        // 每次操作都是一个标签对应多个样式进行的，如果不是id选中该标签就无法进行正确的操作
+        // $("button#ten").click(function() {
+        //     $("div.ten,div.eleven").toggleClass('ten eleven')
+        // });
+        $("button#twelve1").click(function() {
+            $("div#twelve1").toggleClass('twelve1')
+        });
+        // 多个标签切换指定元素的方法，只支持id和标签名指定
+        $("button#thirteen").click(function() {
+            $("div#thirteen1,div#thirteen2").toggleClass('thirteen1 thirteen2')
+        });
+        // 不要多个对应那个切换，逻辑不确定
+    });
+    </script>
+    <style type="text/css" media="screen">
+    .six {
+        color: yellow;
+    }
+    
+    .ten {
+        font-size: 30px;
+    }
+    
+    .eleven {
+        color: grey;
+    }
+    
+    .twelve1 {
+        color: yellow;
+    }
+    
+    .thirteen1 {
+        color: green;
+    }
+    
+    .thirteen2 {
+        color: red;
+    }
+    
+    button {
+        display: block;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+
+<body>
+    <div id="five" class="five">
+        一个标签切换一个样式（外部的）
+    </div>
+    <div id="six" class="six">
+        一个标签切换一个样式（内部的）
+    </div>
+    <div style="color: green">
+        一个标签切换一个样式（内联的）
+    </div>
+    <!-- 内联的无法指定和切换 -->
+    <div class="eight">
+        一个标签切换本来没有的样式
+    </div>
+    <!-- 切换走了就无法切换回来，所以不要操作不存在的css样式 -->
+    <div id="ten" class="ten eleven">
+        一个标签切换多个样式
+    </div>
+    <div id="twelve1" class="twelve1">
+        多个标签切换一个样式1
+    </div>
+    <div id="twelve1" class="twelve1">
+        多个标签切换一个样式2
+    </div>
+    <div id="thirteen1" class="thirteen1">
+        多个标签切换多个样式1
+    </div>
+    <div id="thirteen2" class="thirteen2">
+        多个标签切换多个样式2
+    </div>
+    <button id="five">一个标签移除一个样式（外部的）</button>
+    <button id="six">一个标签移除一个样式（内部的）</button>
+    <button id="seven">一个标签移除一个样式（内联的）</button>
+    <button id="eight">一个标签切换本来没有的样式</button>
+    <button id="ten">一个标签切换多个样式</button>
+    <button id="twelve1">多个标签切换一个样式</button>
+    <button id="thirteen">多个标签切换多个样式</button>
+</body>
+
+</html>

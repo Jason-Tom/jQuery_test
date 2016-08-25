@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#btn1").click(function() {
+            $("#test1").text(function(i, origText) {
+                return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+            });
+        });
+
+        $("#btn2").click(function() {
+            $(".test1").html(function(i, origText) {
+                return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+            });
+            // 前一个变量指选择器指定的第几个标签
+        });
+        $("#btn3").click(function() {
+            // $(".test3").attr("href","https://www.baidu.com/");
+            // 单个设定用逗号隔开
+            // $(".test3").attr({
+            //     "href": "https://www.baidu.com/",
+            //     "style": "color: red;"
+            // });
+            // 多个属性改变用json形式来改变
+            $(".test3").attr("href", function(a, b) {
+                return b + "/tiy/t.asp?f=jquery_dom_html_callback";
+                // 通过函数处理后返回
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <p id="test1">这是<b>粗体</b>文本。</p>
+    <p class="test1">这是<b>粗体</b>文本。</p>
+    <p class="test1">这是<b>粗体</b>文本。</p>
+    <p class="test1">这是<b>粗体</b>文本。</p>
+    <p class="test2">这是另一段<b>粗体</b>文本。</p>
+    <button id="btn1">显示旧/新文本</button>
+    <button id="btn2">显示旧/新 HTML</button>
+    <button id="btn3">改变属性值</button>
+    <a class="test3" href="http://www.w3school.com.cn">链接</a>
+</body>
+
+</html>

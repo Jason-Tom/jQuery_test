@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button").click(function() {
+            $.getJSON("demo_ajax_json.js", function(json) {
+                // 注意浏览器支持问题
+                alert("JSON Data: " + json.firstName);
+                $("p").text(json.firstName);
+                // 通过json反悔的结果集再精确调用
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <button>获得 JSON 数据</button>
+    <p></p>
+</body>
+
+</html>

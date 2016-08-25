@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("#one").click(function(event) {
+            // $(".lalala").children().css("border", "2px solid red");
+            // $(".lalala").children("ul.xixixi").css("border", "2px solid red");
+            // children只能选择直接下一级的元素，即便是配合选择器进行选择
+            // $(".lalala").find("span").css("border", "2px solid red");
+            // 返回指定选择器的指定后代
+            $(".lalala").find("*").css("border", "2px solid red");
+            // 返回选择器指定的所有后代
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="gagaga">111
+        <div class="lalala">222
+            <ul>
+                <li><span>3333333</span></li>
+                <li>44444444</li>
+                <li><span>lalala</span></li>
+            </ul>
+            <ul class="xixixi">
+                <li><span>3333333</span></li>
+                <li>44444444</li>
+                <li><span>lalala</span></li>
+            </ul>
+        </div>
+    </div>
+    <button id="one" type="button" class="btn btn-primary">children</button>
+</body>
+
+</html>

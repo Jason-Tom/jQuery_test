@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("#one").click(function(event) {
+            // $(".lalala").parent().css("border", "2px solid red");
+            // $("#gagaga").parent().css("border", "2px solid red");
+            // 配合选择器使用
+            // $("body").parent().css("border", "2px solid red");
+            // html标签也有边框
+            // $("span").parents().css("border", "2px solid red");
+            // 所有的父级元素
+            $("span").parent().css("border", "2px solid red");
+        });
+        // 有些样式不能通过标签作用出来
+        // 语句直接作用，jquery已经设定好了文件加在完之后在执行js代码
+        $("#two").click(function(event) {
+            $("span").parentsUntil("#gagaga").css("border", "2px solid red");
+            // 最近的两个选定元素之间
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="gagaga">111
+        <div class="lalala">222
+            <ul>
+                <li><span>3333333</span></li>
+                <li>44444444</li>
+                <li><span>lalala</span></li>
+            </ul>
+        </div>
+    </div>
+    <button id="one" type="button" class="btn btn-primary">parent</button>
+    <button id="two" type="button" class="btn btn-primary">parentsUntil</button>
+</body>
+
+</html>
