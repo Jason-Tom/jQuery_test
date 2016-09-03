@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("#btn1").click(function() {
+            // $('#test').load('demo_test.txt');
+            $('#test').load('insert_test.html');
+            // 不能通过file文件形式加载
+            // 会替换掉整个html元素（要有闭合标签的元素）
+        })
+    })
+    </script>
+    <style type="text/css" media="screen">
+    .div {
+        color: red;
+    }
+    
+    table {
+        display: inline-block;
+    }
+    
+    img {
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <h3 id="test">请点击下面的按钮，通过 jQuery AJAX 改变这段文本。</h3> -->
+<!--     <table id="test">
+        <caption>table title and/or explanatory text</caption>
+        <thead>
+            <tr>
+                <th>header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>data</td>
+            </tr>
+        </tbody>
+    </table> -->
+    <img  id="test" src="1.jpg" alt="">
+    <button id="btn1" type="button">获得外部的内容</button>
+</body>
+
+</html>

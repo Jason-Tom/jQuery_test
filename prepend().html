@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#btn1").click(function() {
+            $("p").prepend(" <b>Appended text</b>.");
+            // 和append反过来
+        });
+
+        $("#btn2").click(function() {
+            // $("ol").prepend("<li>Appended item</li>");
+            $("ol").prepend(" <ol>        <li>List item 1</li>        <li>List item 2</li>        <li>List item 3</li>    </ol>");
+            // html元素不能换行
+        });
+        $("#btn3").click(function() {
+            // $(".one").prepend("<div>gagaga</div>");
+            // $(".one").prepend("<span>gagaga</span>");
+            $(".one").prepend("<img src='1.jpg' alt='111111111'>");
+            // 里面的元素有双引号，要转换成单引号，避免冲突
+        });
+        $("#btn4").click(function() {
+            // $("table").prepend("<tr><td>data1</td><td>data2</td><td>5555</td></tr>");
+            // 会直接在表格最后一行添加上新行
+            $("table").prepend("<td>data1</td>");
+            // 会在最后一行添加新元素，有多的会全部合并到最后一个，小心越界
+            // $("table").prepend("<tbody><tr><td>data1</td><td>data2</td><td>22222</td></tr></tbody>");
+            // $("table").prepend("<tr><th>header1</th>                <th>header2</th>                <th>header3</th>            </tr>");
+            // 标题会在table里面元素，最后面添加标题
+            // $("table").prepend("<thead>            <tr>                <th>header1</th>                <th>header2</th>                <th>header3</th>            </tr>        </thead>");
+            // $("table").prepend("<th>header2</th>");
+            // $("table").prepend("<table>        <thead>            <tr>                <th>header1</th>                <th>header2</th>                <th>header3</th>            </tr>        </thead>        <tbody>            <tr>                <td>data1</td>                <td>data2</td>                <td>data3</td>            </tr>        </tbody>    </table>");
+            // 凡是有子元素的标签，用append添加新元素，都会在它里面最后面添加上标签
+        });
+    });
+    </script>
+    <style type="text/css" media="screen">
+    .one {
+        display: inline;
+    }
+    </style>
+</head>
+
+<body>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <div class="one">
+        lalalala
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>header1</th>
+                <th>header2</th>
+                <th>header3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>data1</td>
+                <td>data2</td>
+                <td>data3</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn1">追加文本</button>
+    <button id="btn2">追加列表项</button>
+    <button id="btn3">块级元素后面添加不同元素</button>
+    <!-- 三种元素添加像在html里面一样，直接加载html标签到指定标签后面 -->
+    <button id="btn4">表格后面添加元素</button>
+</body>
+
+</html>

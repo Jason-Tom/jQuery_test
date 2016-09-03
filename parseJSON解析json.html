@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        var xixixi = '{"jobID":"lalala","username":"gagaga","department":"hahaha"}';
+        var obj = $.parseJSON(xixixi);
+        // var obj = jQuery.parseJSON(xixixi);
+        // 字符串json要用单引号括起整个数组，里面变量名和变量要用双引号括起
+        alert(obj.jobID + obj.username + obj.department + xixixi);
+    });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

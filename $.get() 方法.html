@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            $.get("test1.txt", function(data, status) {
+              // 链接不用加上http（有时候要（在表单的时候））
+                alert("数据：" + data + "\n状态：" + status);
+            });
+        });
+        // get和post、load方法都有回调函数，参数意义不同
+    });
+    </script>
+</head>
+
+<body>
+    <button>向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+</body>
+
+</html>

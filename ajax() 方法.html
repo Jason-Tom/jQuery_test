@@ -1,0 +1,40 @@
+﻿<html>
+
+<head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#b01").click(function() {
+            htmlobj = $.ajax({
+                // 去掉点击事件就能在加载网页的时候加在好
+                // url: "http://www.w3school.com.cn//jquery/test1.txt",
+                // url: "127.0.0.1/jQuery_test/test1.txt",
+                url: "test1.txt",
+                // 自己服务器不会发生跨域，，要用相对路径
+                // 服务器上运行，不要用file运行，
+                // 可以访问中文文件名，但是最好不用
+                jsonp: "callbackparam",
+                jsonpCallback: "jsonpCallback1",
+                // 用好f12  html css js 网络请求 other
+                async: false
+            });
+            $("#myDiv").html(htmlobj.responseText);
+        });
+        // $("#myDiv").load("test1.txt", function(responseTxt, statusTxt, xhr) {
+        //     if (statusTxt == "success")
+        //         alert("  外部内容加载成功！"+"statusTxt:  "+statusTxt+"  responseTxt:  "+responseTxt+"  xhr:  "+xhr);
+        //     if (statusTxt == "error")
+        //         alert("Error: " + xhr.status + ": " + xhr.statusText);
+        // });
+        // 加载的链接要加上双引号，使用相对路径
+    });
+    </script>
+</head>
+
+<body>
+    <div id="myDiv">
+        <h2>通过 AJAX 改变文本</h2></div>
+    <button id="b01" type="button">改变内容</button>
+</body>
+
+</html>

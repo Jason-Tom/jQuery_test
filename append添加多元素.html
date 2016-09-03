@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#btn1").click(function() {
+            $("p").append(" <b>Appended text</b>.");
+        });
+
+        $("#btn2").click(function() {
+            // $("ol").append("<li>Appended item</li>");
+            $("ol").append(" <ol>        <li>List item 1</li>        <li>List item 2</li>        <li>List item 3</li>    </ol>");
+            // html元素不能换行
+        });
+        $("#btn3").click(function() {
+            var i = 0;
+            for (i = 0; i < 10; i++) {
+                $(".one").append("<div>gagaga</div>");
+            }
+
+            // $(".one").append("<span>gagaga</span>");
+            // $(".one").append("<img src='1.jpg' alt='111111111'>");
+            // 里面的元素有双引号，要转换成单引号，避免冲突
+        });
+        $("#btn4").click(function() {
+            // $("table").append("<tr><td>data1</td><td>data2</td><td>5555</td></tr>");
+            // 会直接在表格最后一行添加上新行
+            $("table").append("<td>data1</td>");
+            // 会在最后一行添加新元素，有多的会全部合并到最后一个，小心越界
+            // $("table").append("<tbody><tr><td>data1</td><td>data2</td><td>22222</td></tr></tbody>");
+            // $("table").append("<tr><th>header1</th>                <th>header2</th>                <th>header3</th>            </tr>");
+            // 标题会在table里面元素，最后面添加标题
+            // $("table").append("<thead>            <tr>                <th>header1</th>                <th>header2</th>                <th>header3</th>            </tr>        </thead>");
+            // $("table").append("<th>header2</th>");
+            // $("table").append("<table>        <thead>            <tr>                <th>header1</th>                <th>header2</th>                <th>header3</th>            </tr>        </thead>        <tbody>            <tr>                <td>data1</td>                <td>data2</td>                <td>data3</td>            </tr>        </tbody>    </table>");
+            // 凡是有子元素的标签，用append添加新元素，都会在它里面最后面添加上标签
+        });
+    });
+    </script>
+    <style type="text/css" media="screen">
+    .one {
+        display: inline;
+        height: 100px;
+        padding: 10px;
+        background-color: yellow;
+    }
+    
+    td {
+        color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <ol>
+        <li>List item 1</li>
+    </ol>
+    <div class="one">
+        <span>lalalala</span>
+        <!-- 自己添加的子元素也算 -->
+        <!-- 没有子元素用法和after一样 -->
+        <div style="background-color: green">gagaga</div>
+        <div>gagaga</div>
+        <!-- 块级元素在内联元素里面，会换行覆盖 -->
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>header1</th>
+                <th>header2</th>
+                <th>header3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>data1</td>
+                <td>data2</td>
+                <td>data3</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn1">追加文本</button>
+    <button id="btn2">追加列表项</button>
+    <button id="btn3">块级元素后面添加不同元素</button>
+    <!-- 三种元素添加像在html里面一样，直接加载html标签到指定标签后面 -->
+    <button id="btn4">表格后面添加元素</button>
+</body>
+
+</html>

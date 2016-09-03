@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script type="text/javascript" src="jquery.js"></script> -->
+    <script type="text/javascript">
+    var lalala = '{name:"jack"}';
+
+    function strToJson(str) {
+        var json = eval('(' + str + ')');
+        return json;
+    }
+    var gagaga = strToJson(lalala);
+    console.log(gagaga.name);
+    </script>
+</body>
+
+</html>

@@ -1,40 +1,51 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 
 <head>
-    <script src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
+    x = 0;
     $(document).ready(function() {
-        $(".btn1").click(function() {
-            $("div").scrollTop(0);
-            // 设定标签(一般是body)上下位置
-        });
-        $(".btn2").click(function() {
-            alert($("div").scrollTop() + " px");
-            // 获取标签上下位置,不包括单位
-        });
-        $("_div").scroll(function() {
-            alert($("div").scrollTop() + " px");
-        });
-        $("div").scroll(function() {
-            if ($("div").scrollTop() > 300) {
-                $(".btn2").css("display", "none");
+        $(".lalala").scroll(function() {
+            // scroll（。。。）指定的对象都是能滚动的有宽高元素
+            $("span").text(x += 1);
+            if ($(".lalala").scrollTop() > 200) {
+                $(".xixixi").css("display", "none");
             } else {
-                $(".btn2").css("display", "block");
+                $(".xixixi").css("display", "block")
             }
+        });
+        $("button").click(function() {
+            $(".lalala").scroll();
         });
     });
     </script>
+    <style type="text/css" media="screen">
+    .xixixi {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        position: fixed;
+        top: 300px;
+        left: 500px;
+    }
+    </style>
 </head>
 
 <body>
-    <div class="_div" style="border:1px solid black;width:200px;height:200px;overflow:auto">
-        <div style="width:100px;height:800px;background-color: blue">
-        </div>
+    <p>请试着滚动 DIV 中的文本：</p>
+    <div class="lalala" style="position: absolute;left: 300px;top: 300px;width:100%;height:100px;overflow:scroll;">text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.
+        <br />
+        <br /> text. text. text. text. text</span>text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.
+        <br />
+        <br /> text. text. text. text. text</span>text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.
+        <br />
+        <br /> text. text. text. text. text</span>text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.
+        <br />
+        <br /> text. text. text. text. <span class="test">text</span>text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.</div>
+    <p>滚动了 <span>0</span> 次。</p>
+    <button>触发窗口的 scroll 事件</button>
+    <div class="xixixi">
     </div>
-    <button class="btn1">把 scroll top offset 设置为 100px</button>
-    <br />
-    <button class="btn2">获得 scroll top offset</button>
 </body>
 
 </html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            // $.post("127.0.0.1:8081/process_post", {
+            $.post("http://127.0.0.1:8081/process_post", {
+                    // 加上协议可以填写绝对路径（包括其他服务器上的路径）
+                    // 路径填写要正确，一般天相对路径
+                    // 直接用下面斜杠
+                    // 转义字符是斜杠（上面的）
+                    // $.post("demo_test_post.asp", {
+                    // $.post("http://www.w3school.com.cn/example/jquery/demo_test_post.asp", {
+                    // $.post("http://www.w3school.com.cn/example/jquery/demo_test_post.asp", {
+                    name: "Donald Duck",
+                    city: "Duckburg"
+                },
+                function(data, status) {
+
+                    console.log(data,status);
+                    var json = data;
+                    // 获取json对象后读取
+                    alert("数据：" + json.name + "\n状态：" + status);
+                    
+                });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <button>向页面发送 HTTP POST 请求，并获得返回的结果</button>
+</body>
+
+</html>
