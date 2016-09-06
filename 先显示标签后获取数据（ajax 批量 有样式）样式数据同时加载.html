@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css" media="screen">
+    .lalala {
+        background-color: lightblue;
+        font-size: 0px;
+    }
+    
+    .hahaha {
+        background-image: url(1.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        /*background-size: cover;*/
+        background-origin: center;
+        width: 25%;
+        height: 300px;
+        display: inline-block;
+        /*background-color: yellow;*/
+        /*背景颜色默认透明*/
+    }
+    </style>
+</head>
+
+<body>
+    <div class="lalala">
+        lalala
+    </div>
+    <button class="xixixi">样式元素同时加载并且加载ajax数据</button>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $(".xixixi").click(function() {
+            $.ajax({
+                type: "post",
+                url: "http://123.206.96.76:8080/M2shop/leaveword/alllist?productid=1",
+                dataType: "json",
+                // async: false,
+                success: function(gagagaga) {
+                    console.log("gagagaga:" + gagagaga[0].nickname);
+                    var i = 0;
+                    for (i = 0; i < 1; i++) {
+                        $(".lalala").append("<div class='hahaha'><span style='font-size:60px;'>lalala</span></div>");
+                        $(".lalala").children().css({
+                            "background-image": "url(images.jpg)"
+                        });
+                        $("span").html(gagagaga[1].nickname)
+                        // alert(gagagaga[1].nickname);
+                    }
+                }
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

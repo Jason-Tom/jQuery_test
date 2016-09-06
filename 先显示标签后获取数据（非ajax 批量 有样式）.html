@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css" media="screen">
+    .lalala {
+        background-color: lightblue;
+        font-size: 0px;
+    }
+    
+    .hahaha {
+        background-image: url(1.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        /*background-size: cover;*/
+        background-origin: center;
+        width: 25%;
+        height: 300px;
+        display: inline-block;
+        /*background-color: yellow;*/
+        /*背景颜色默认透明*/
+    }
+    </style>
+</head>
+
+<body>
+    <div class="lalala">
+        lalala
+    </div>
+    <button class="gagaga">批量添加元素</button>
+    <button class="xixixi">添加数据</button>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $(".gagaga").click(function() {
+            var i = 0;
+            for (i = 0; i < 3; i++) {
+                $(".lalala").append("<div class='hahaha'></div>");
+            }
+        });
+        $(".xixixi").click(function() {
+            $(".lalala").children().css({"background-image":"url(images.jpg)"});
+        });
+    });
+    // 先放置数据，会只改动，已经存在的元素
+    </script>
+</body>
+
+</html>

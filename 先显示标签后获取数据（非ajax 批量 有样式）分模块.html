@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css" media="screen">
+    .lalala {
+        background-color: lightblue;
+        font-size: 0px;
+    }
+    
+    .hahaha {
+        background-image: url(1.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        /*background-size: cover;*/
+        background-origin: center;
+        width: 25%;
+        height: 300px;
+        display: inline-block;
+        font-size: 50px;
+        /*background-color: yellow;*/
+        /*背景颜色默认透明*/
+    }
+    </style>
+</head>
+
+<body>
+    <div class="lalala">
+        lalala
+    </div>
+    <button class="gagaga">批量添加元素</button>
+    <script src="myjs_modal.js"></script>
+    <!-- 通过script以字符串的形式分离出去 -->
+    <script src="jquery.js"></script>
+    <!-- 导入的js其实在一个文件里面属于同一个大js文件，但是语句仍然有先后之分 -->
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $(".gagaga").click(function() {
+            var i = 0;
+            for (i = 0; i < 10; i++) {
+                $(".lalala").append(xixixi);
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

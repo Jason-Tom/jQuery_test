@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            // $.post("http://123.206.96.76:8080/M2shop/product1", {
+            //         name: "Donald Duck",
+            //         city: "Duckburg"
+            //     },
+            //     function(data, status) {
+
+            //         console.log(data,status);
+            //         // var json = data;
+            //         // alert("数据：" + data + "\n状态：" + status+"lalala");
+            //         alert(data);
+            //         alert(data.en);
+
+            //     });
+            $.ajax({
+                type: "post",
+                url: "http://123.206.96.76:8080/M2shop/product1",
+                // data:pro,
+                dataType: "json",
+                // 解析类型
+                async: false,
+                success: function(data) {
+                    alert(data.en);
+                }
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <button>向页面发送 HTTP POST 请求，并获得返回的结果</button>
+</body>
+
+</html>
